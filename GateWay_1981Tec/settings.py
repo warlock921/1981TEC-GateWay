@@ -31,12 +31,14 @@ ALLOWED_HOSTS = ['10.0.0.15','localhost','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'GW_1981Tec.apps.SuitConfig',  # 需要添加的内容，要放在'django.contrib.admin'之前
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'GW_1981Tec',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'GateWay_1981Tec.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,7 +82,7 @@ DATABASES = {
         'USER':'root',
         'PASSWORD':'P@ssword',
         'HOST':'localhost',
-        'PORT':'',
+        'PORT':'3306',
     }
 }
 
